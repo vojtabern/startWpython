@@ -50,3 +50,15 @@ aspoň jednu podmínku if a funkci print(). Dodržte správné odsazování kód
 Do konzole vypište nejprve docstring vaší funkce a potom zavolejte funkci samotnou.   
 """
 
+def kokos(kokosy):
+    """
+    This function will find if you are liar.
+    """
+    pocet = input("Kolik kokosů chceš?")
+    if int(pocet) < 5:
+        print("Lháři nikdo nechce jen " + pocet + " " + kokosy + ". To je tak málo" + kokosy)
+    print("Prodavačka ti dala " + pocet + " " + kokosy + " a ktomu přidala")
+    if int(pocet) >= 5:
+        for i in range (int(pocet), int(pocet)+100):
+            print(i, kokosy)
+kokos('kokosů')

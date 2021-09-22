@@ -22,7 +22,7 @@ from jméno_modulu import jméno_funkce
 '''
 
 from sys import path
-print(path) # Zobrazuje seznam (list) cest k adresářům, které aplikace využívá
+#print(path) # Zobrazuje seznam (list) cest k adresářům, které aplikace využívá
 
 '''
 Moduly math a sys patří k interním modulům, jež jsou součástí standardní instalace Pythonu.
@@ -75,3 +75,35 @@ Použijte vhodné moduly v Pythonu (včetně jejich případné instalace) k tom
 K řešení prvního úkolu je možné doporučit importovat interní modul datetime
 Řešení dalších dvou úkolů můžete odvodit z příkladů v dokumentaci k externímu modulu dateutil - viz https://pypi.org/project/python-dateutil/
 """
+from datetime import datetime
+now = datetime.now()
+print ("Ted je =", now)
+cas = now.strftime("%d/%m/%y %H:%M:%S")
+print("Datum a čas =", cas)
+
+from dateutil.relativedelta import *
+from dateutil.easter import *
+from dateutil.rrule import *
+from dateutil.parser import *
+from datetime import *
+
+now = datetime.now()
+today = now.date()
+year = rrule(YEARLY, dtstart=now, bymonth=9, bymonthday=22, byweekday=WE)[0].year
+
+j=0
+for i in range(1,6):
+    j += 1
+    rdelta = relativedelta(easter(year+j), today)
+    year = rrule(YEARLY, dtstart=now, bymonth=9, bymonthday=22, byweekday=WE)[0].year
+    print("Další velikonoce jsou v roce: %s" % (today+rdelta))
+
+
+"""from dateutil import rrule
+import datetime
+rs = rrule.rruleset()
+kokos=rs.rrule(rrule.rrule(rrule.YEARLY, dtstart=now, bymonth=12, bymonthday=24, byweekday=rrule.SU).kokos)
+print("Year with next Aug 13th on a Friday is: %s" % year)
+print ("NYSE Holidays\n")
+print ("%s"% kokos)
+Já fakt nvm. Odmítá to fungovat"""

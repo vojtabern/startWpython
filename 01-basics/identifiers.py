@@ -47,10 +47,10 @@ komentáře, proč byl identifikátor použit nesprávně. Navrhněte pod koment
 import_from = 'China'
 
 x = 0
-global = 1
+globalni = 1
 PI = 3.14
-city = "Opava"
-hilda@sspu-opava.cz = 'Hilda Dokonalá'
+city = 'Opava'
+hilda_sspu_opava_cz = 'Hilda Dokonalá'
 password2 = 'TajneHeslo'
-007agent = 'James Bond'
+agent007 = 'James Bond'
 

@@ -162,7 +162,7 @@ def funkce(stringy, j):
     nfkd_form = unicodedata.normalize('NFKD', stringy)
     stringy = u"".join([c for c in nfkd_form if not unicodedata.combining(c)])
     if j == 0:
-        return print(stringy.replace(" ","_").lower())
+        return stringy.replace(" ","_").lower()
     else:
         zmena = stringy
         zmena_za_b = stringy
@@ -170,13 +170,14 @@ def funkce(stringy, j):
         zmena = zmena.lower()
         zmena = zmena[0] + zmena_za_b[1:]
 
-        return print(zmena.replace(" ",""))
+        return zmena.replace(" ","")
 
 
 stringy = input("Zadej string: ")
-funkce(stringy, j=0)
-funkce(stringy, j=1)
-
+string1 = funkce(stringy, j=0)
+print(string1)
+string2 = funkce(stringy, j=1)
+print(string2)
 def pocet_osob():
     while True:
         try:
@@ -198,6 +199,13 @@ def generuj():
 
 pocet = pocet_osob()
 hesla=[]
+"""
+pokud bych chtěl tak můžu vypisovat rovnou ve funkci ale pak bych vygenerovaná hesla zahodil, takže
+jsem se rozhodnul ukládat je do pole. Vypadalo by to takto: žádný for, a žádný print. generuj(pocet)
+pak ve fuknci mít def generuj(pocet):
+a for i in range (pocet) a pod tím stejný kod, který by ale končil printem a ne returnem. Vracet print je zbytečné, 
+protože return se pak rovná None
+"""
 for i in range (pocet):
     hesla.append(generuj())
     print(hesla[i])

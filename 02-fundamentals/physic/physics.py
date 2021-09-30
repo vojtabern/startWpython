@@ -18,7 +18,7 @@ def rozdil_mezi_gravitacemi_earth_moon(earth, moon, jmeno1, jmeno2):
     rozdil_mezi_gravitacemi_earth_moon: Vypočítá jaký je rozdíl mezi gravitací země a měsíce v m/s
     """
     substract = abs(earth - moon)
-    return(print("Rozdil gravitací", jmeno1,"a",jmeno2 ,"je {:.2f} m/s".format(substract)))
+    print(f"Rozdil gravitací {jmeno1} a {jmeno2} je {substract:.2f} m/s")
 
 rozdil_mezi_gravitacemi_earth_moon(EARTH_GRAVITY, MOON_GRAVITY, "země", "měsíce")
 
@@ -27,7 +27,7 @@ def rozdil_mezi_rychlost_light_sound(light, sound, jmeno1, jmeno2):
     rozdil_mezi_rychlost_light_sound Vypočítá jaký je rozdíl mezi rychlostí světla a zvuku v m/s
     """
     substract_v = abs(sound - light)
-    return(print("Rozdil rychlosti", jmeno1,"a", jmeno2, "je",substract_v ,"m/s"))
+    print(f"Rozdil rychlosti {jmeno1} a {jmeno2} je {substract_v} m/s")
 rozdil_mezi_rychlost_light_sound(SPEED_OF_LIGHT, SPEED_OF_SOUND, "světla", "zvuku")
 
 ''' 

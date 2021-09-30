@@ -1,4 +1,6 @@
 # Znakové řetězce mohou být uvozeny jednoduchými i dvojitými uvozovkami
+import datetime
+
 course_name = "Python programming"
 
 '''
@@ -150,9 +152,53 @@ Použijte kombinaci různý možností pro práci s řetězci (včetně různýc
 funkční kód, tím lepší).
 '''
 from datetime import date
-
+print(f"jinak ale delsi:{datetime.datetime.today().day}-{datetime.datetime.today().month}-{datetime.datetime.today().year}")
+print(f"{datetime.datetime.today().year}-0{datetime.datetime.today().month:01d}-{datetime.datetime.today().day}")
 print(f"{date.today()}")
 
+import unicodedata
+import string
+def funkce(stringy, j):
+    nfkd_form = unicodedata.normalize('NFKD', stringy)
+    stringy = u"".join([c for c in nfkd_form if not unicodedata.combining(c)])
+    if j == 0:
+        return print(stringy.replace(" ","_").lower())
+    else:
+        zmena = stringy
+        zmena_za_b = stringy
+        zmena_za_b = string.capwords(zmena_za_b[0:])
+        zmena = zmena.lower()
+        zmena = zmena[0] + zmena_za_b[1:]
+
+        return print(zmena.replace(" ",""))
+
+
+stringy = input("Zadej string: ")
+funkce(stringy, j=0)
+funkce(stringy, j=1)
+
+def pocet_osob():
+    while True:
+        try:
+            question = int(input("Zadej pocet osob: "))
+            break
+        except:
+            print("Tohle není možné")
+    return question
+
+import random
+def generuj(pocet):
+    velke_3 = "".join(random.choices(string.ascii_uppercase, k = 3))
+    male_3 = "".join(random.choices(string.ascii_lowercase, k=3))
+    specialni = "".join(random.choices("-/+*"))
+    #specialni = "".join(random.choices(string.punctuation))
+    cisla_3 = "".join(random.choices(string.digits, k=3))
+    return print(f"{velke_3}{male_3}{specialni}{cisla_3}")
+
+
+pocet = pocet_osob()
+for i in range (pocet):
+    generuj(pocet)
 
 '''
 1. Převeďte "česky" zadané datum - např. 12. 10. 2020 - do podoby "databázové" podoby - např. 2020-10-12

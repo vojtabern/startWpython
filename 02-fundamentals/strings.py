@@ -202,6 +202,7 @@ for i in range (pocet):
     hesla.append(generuj())
     print(hesla[i])
 #nebo taky možnost
+print("\nDruha možnost výpisu\n")
 for heslo in hesla:
     print(heslo)
 

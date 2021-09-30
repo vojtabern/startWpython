@@ -106,4 +106,9 @@ kokos=rs.rrule(rrule.rrule(rrule.YEARLY, dtstart=now, bymonth=12, bymonthday=24,
 print("Year with next Aug 13th on a Friday is: %s" % year)
 print ("NYSE Holidays\n")
 print ("%s"% kokos)
-Já fakt nvm. Odmítá to fungovat"""
+Já fakt nvm. Odmítá to fungovat
+from dateutil.relativedelta import *
+
+kokos = rrule(YEARLY, dtstart=now, bymonth=12, bymonthday=24, byweekday=SU)[0].kokos
+rdelta = relativedelta(kokos, today)
+print("Další velikonoce jsou v roce: %s" % (today+rdelta))"""

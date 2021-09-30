@@ -30,9 +30,19 @@ Některé objekty mohou mít explicitně přiřazené jméno, obecně označovan
 '''Úkol A'''
 #? Najděte na Internetu, jakými funkcemi lze v Pythonu zjistit
 #? a) typ objektu
+#type(object)
 #? b) identitu objektu (jeho adresu v paměti)
+#id(object)
 #? Ukažte to na příkladech proměnných students_count, rating, is_published a vypište výstupy do konzole
-
+print("student")
+print(type(students_count))
+print(id(students_count))
+print("rating")
+print(type(rating))
+print(id(rating))
+print("is_published")
+print(type(is_published))
+print(id(is_published))
 # Numerické operátory
 # print(10 + 3)
 # print(10 - 3)

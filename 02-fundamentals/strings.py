@@ -153,7 +153,7 @@ funkční kód, tím lepší).
 '''
 from datetime import date
 print(f"jinak ale delsi:{datetime.datetime.today().day}-{datetime.datetime.today().month}-{datetime.datetime.today().year}")
-print(f"{datetime.datetime.today().year}-0{datetime.datetime.today().month:01d}-{datetime.datetime.today().day}")
+print(f"{datetime.datetime.today().year}-{datetime.datetime.today().month:02d}-{datetime.datetime.today().day}")
 print(f"{date.today()}")
 
 import unicodedata

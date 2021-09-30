@@ -148,7 +148,13 @@ Programátorská výzva:
 Použijte kombinaci různý možností pro práci s řetězci (včetně různých funkcí) i jiných prvků jazyka Python 
 (ternární operátor, matematické funkce atd.) k co nejefektivnějšímu řešení následujících cvičení (čím kratší
 funkční kód, tím lepší).
+'''
+from datetime import date
 
+print(f"{date.today()}")
+
+
+'''
 1. Převeďte "česky" zadané datum - např. 12. 10. 2020 - do podoby "databázové" podoby - např. 2020-10-12
 2. Vytvořte funkci, která vyrobí ze zadaného sousloví:
    a) identifikátor pro proměnné používané v Pythonu - např. To je proměnná v Pythonu = to_je_promenna_v_pythonu

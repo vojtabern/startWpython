@@ -187,18 +187,23 @@ def pocet_osob():
     return question
 
 import random
-def generuj(pocet):
+def generuj():
     velke_3 = "".join(random.choices(string.ascii_uppercase, k = 3))
     male_3 = "".join(random.choices(string.ascii_lowercase, k=3))
     specialni = "".join(random.choices("-/+*"))
     #specialni = "".join(random.choices(string.punctuation))
     cisla_3 = "".join(random.choices(string.digits, k=3))
-    return print(f"{velke_3}{male_3}{specialni}{cisla_3}")
+    return f"{velke_3}{male_3}{specialni}{cisla_3}"
 
 
 pocet = pocet_osob()
+hesla=[]
 for i in range (pocet):
-    generuj(pocet)
+    hesla.append(generuj())
+    print(hesla[i])
+#nebo taky možnost
+for heslo in hesla:
+    print(heslo)
 
 '''
 1. Převeďte "česky" zadané datum - např. 12. 10. 2020 - do podoby "databázové" podoby - např. 2020-10-12

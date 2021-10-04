@@ -151,10 +151,23 @@ Použijte kombinaci různý možností pro práci s řetězci (včetně různýc
 (ternární operátor, matematické funkce atd.) k co nejefektivnějšímu řešení následujících cvičení (čím kratší
 funkční kód, tím lepší).
 '''
+
+'''
+1. Převeďte "česky" zadané datum - např. 12. 10. 2020 - do podoby "databázové" podoby - např. 2020-10-12
+2. Vytvořte funkci, která vyrobí ze zadaného sousloví:
+   a) identifikátor pro proměnné používané v Pythonu - např. To je proměnná v Pythonu = to_je_promenna_v_pythonu
+   b) identifikátor pro camel syntax v JS - např. To je proměnná v Pythonu = toJePromennaVPythonu 
+   Obě možnosti by měly být vyřešeny v jedné funkci s využitím parametrů.
+   Kdo si chce úkol trochu zjednodušit, nemusí řešit znaky s českou diakritikou. 
+3. Vytvořte funkci, která vygeneruje náhodná hesla pro počet osob zadaný v parametru tak, aby heslo začínalo
+   3 velkými písmeny, pokračovalo 3 malými písmeny, jedním speciálním znakem (-/+*) a končilo 3 náhodnými číslicemi.
+'''
+
 from datetime import date
 print(f"jinak ale delsi:{datetime.datetime.today().day}-{datetime.datetime.today().month}-{datetime.datetime.today().year}")
 print(f"{datetime.datetime.today().year}-{datetime.datetime.today().month:02d}-{datetime.datetime.today().day}")
 print(f"{date.today()}")
+
 
 import unicodedata
 import string
@@ -213,14 +226,3 @@ for i in range (pocet):
 print("\nDruha možnost výpisu\n")
 for heslo in hesla:
     print(heslo)
-
-'''
-1. Převeďte "česky" zadané datum - např. 12. 10. 2020 - do podoby "databázové" podoby - např. 2020-10-12
-2. Vytvořte funkci, která vyrobí ze zadaného sousloví:
-   a) identifikátor pro proměnné používané v Pythonu - např. To je proměnná v Pythonu = to_je_promenna_v_pythonu
-   b) identifikátor pro camel syntax v JS - např. To je proměnná v Pythonu = toJePromennaVPythonu 
-   Obě možnosti by měly být vyřešeny v jedné funkci s využitím parametrů.
-   Kdo si chce úkol trochu zjednodušit, nemusí řešit znaky s českou diakritikou. 
-3. Vytvořte funkci, která vygeneruje náhodná hesla pro počet osob zadaný v parametru tak, aby heslo začínalo
-   3 velkými písmeny, pokračovalo 3 malými písmeny, jedním speciálním znakem (-/+*) a končilo 3 náhodnými číslicemi.
-'''

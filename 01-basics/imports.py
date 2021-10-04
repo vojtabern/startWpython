@@ -87,6 +87,7 @@ from dateutil.rrule import *
 from dateutil.parser import *
 from datetime import *
 
+
 now = datetime.now()
 today = now.date()
 year = rrule(YEARLY, dtstart=now, bymonth=9, bymonthday=22, byweekday=WE)[0].year
@@ -98,7 +99,15 @@ for i in range(1,6):
     year = rrule(YEARLY, dtstart=now, bymonth=9, bymonthday=22, byweekday=WE)[0].year
     print("Další velikonoce jsou v roce: %s" % (today+rdelta))
 
-
+import datetime
+for i in range (0, 50):
+    vanoce = datetime.date(today.year + i, 12,24)
+    editVanoce = vanoce.strftime("%A - %d/%m/%Y")
+    if (editVanoce.find('Sunday')!= -1):
+        print(editVanoce)
+        break
+    else:
+        continue
 """from dateutil import rrule
 import datetime
 rs = rrule.rruleset()

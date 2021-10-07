@@ -314,7 +314,7 @@ print(list(zipped))
 # Záznamy budou seřazeny podle věku (sestupně).
 persons = [
     ('Karel', 20, 'muž'),
-    ('Jana', 21, 'žena'),
+    ('Hildak', 21, 'žena'),
     ('Ivan', 40, 'muž'),
     ('Milada', 50, 'žena'),
 ]
@@ -323,3 +323,12 @@ women = list(filter(lambda person: person[2] == "žena", persons))
 women = [person for person in persons if person[2]=="žena"]
 for person in women:
     print(f"{person[0]}\n" + "-" * len(person[0]))
+ipeople = list(filter(lambda person: person[0].count("i") > 0 or person[0].count("I") > 0, persons))
+ipeople = [person for person in persons if person[0].count("i") > 0 or person[0].count("I") > 0]
+ipeople.sort(key=lambda item: item[1], reverse=True)
+print(ipeople)
+ipeopleCSV = "index;jmeno;vek;pohlavi\n"
+for i in range(len(ipeople)):
+    ipeopleCSV += f"{i};" + ";".join(map(str, ipeople[i])) + "\n"
+print(ipeopleCSV)
+#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

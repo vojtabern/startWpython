@@ -331,4 +331,3 @@ ipeopleCSV = "index;jmeno;vek;pohlavi\n"
 for i in range(len(ipeople)):
     ipeopleCSV += f"{i};" + ";".join(map(str, ipeople[i])) + "\n"
 print(ipeopleCSV)
-#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

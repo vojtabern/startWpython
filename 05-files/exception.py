@@ -10,13 +10,13 @@ Zdroje informací:
 
 # 1. Index mimo rozsah listu
 numbers = [1, 2]
-print(numbers[3])
+#print(numbers[3])
 
 age = int(input("Age: "))
 xfactor = 10 / age
-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
-# 2. Nesprávný typ na vstupu
-# Ošetření pomocí výjimky
+#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
+#2. Nesprávný typ na vstupu
+#Ošetření pomocí výjimky
 # try:
 #     age = int(input("Age: "))
 #     xfactor = 10 / age
@@ -34,24 +34,25 @@ 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
 # print("Pokračování kódu")
 
 
-# 3. Kombinace různých výjimek
-# try:
-#     with open("./exception.py") as file1, open("./pokus.txt") as file2:
-#         print("Soubor otevřen")
-#     age = int(input("Age: "))
-#     xfactor = 10 / age
-# except (ValueError, ZeroDivisionError) as error:
-#     print("Chybné zadání!")
-#     print(error)
-#     print(type(error))
-# except FileNotFoundError as error:
-#     print("Nebylo možné otevřít soubor")
-#     print(error)
-#     print(type(error))
-# else:
-#     print("Vše je v pořádku")
-# finally:
-#     file1.close()
-#     file2.close()
-#
-# print("Pokračování kódu")
+#3. Kombinace různých výjimek
+try:
+    with open("./exception.py") as file1, open("./pokus.txt") as file2:
+        print("Soubor otevřen")
+    age = int(input("Age: "))
+    xfactor = 10 / age
+except (ValueError, ZeroDivisionError) as error:
+    print("Chybné zadání!")
+    print(error)
+    print(type(error))
+except FileNotFoundError as error:
+    print("Nebylo možné otevřít soubor")
+    print(error)
+    print(type(error))
+else:
+    print("Vše je v pořádku")
+finally:
+    print("To se provede vždy")
+    file1.close()
+    file2.close()
+
+print("Pokračování kódu")

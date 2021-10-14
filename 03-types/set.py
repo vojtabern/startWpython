@@ -17,6 +17,7 @@ print(f'Proměnná set_numbers - množina (set): {set_numbers}')
 chars = sorted(list('Hello world'))
 set_chars = set(chars)
 print(f'Uspořádaná množina (set) jedinečných hodnot: {set_chars}')
+print(f'Uspořádaná seznam hodnot: {chars}')
 
 # Once a set is created, you cannot change its items, but you can add new items. 
 # To add one item to a set use the add() method.

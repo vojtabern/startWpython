@@ -11,7 +11,7 @@ hello = 'Toto je dlouhý řetězec obsahující mnoho\n\
     "Bílé" znaky na začátku řádku se samozřejmě\
  berou v úvahu.'
 
-# print(hello)
+#print(hello)
 
 '''
 Python podporuje i tzv. raw řetězce (cosi jak ryzí, syrové řetězce), u nichž se řídící (escape) sekvence 
@@ -22,7 +22,7 @@ Potom řetězec r'\n' odpovídá dvěma znakům - zpětnému lomítku a znaku n,
 hello = r'Toto je dlouhý řetězec obsahující mnoho\n\
 řádek textu, stejně jej zapisujete i v C.'
 
-# print(hello)
+#print(hello)
 
 '''
 Další možností, jak vytvořit víceřádkový řetězec je jeho uzavření mezi odpovídající pár trojitých uvozovek. 
@@ -37,10 +37,10 @@ message = '''
 
        Andrej
 '''
-# print(message)
+#print(message)
 
 # Funkce len vrací délku řetězce
-# print(len(message))
+#print(len(message))
 
 '''
 Řetězce můžeme (podobně jako v jazyce C) indexovat. První znak řetězce pak má index 0. 
@@ -68,9 +68,9 @@ Na prvním řádku jsou uvedeny všechny možné slice-indexy 0...5 v řetězci 
 '''
 
 # Vypíše poslední znak z řetězce
-# print(course_name[-1])
+#print(course_name[-1])
 # Vypíše vše od 2. do 4. znaku (bez něj)
-# print(course_name[1:3])
+#print(course_name[1:3])
 
 '''
 Slice indexy mají specifické vlastnosti. Vynecháme-li první index, je za něj automaticky dosazena nula (začátek řetězce). 
@@ -78,7 +78,7 @@ Při neuvedení druhého indexu se použije délka řetězce (čili konec řetě
 '''
 
 # Vypíše vše od 2. znaku
-# print(course_name[1:])
+#print(course_name[1:])
 # Vypíše vše od 2. znaku do předposledního
 # print(course_name[1:-1])
 # Vypíše 3 znaky od začátku

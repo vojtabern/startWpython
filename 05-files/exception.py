@@ -9,12 +9,12 @@ Zdroje informací:
 # Možné chyby v programu
 
 # 1. Index mimo rozsah listu
-# numbers = [1, 2]
-# print(numbers[3])
+numbers = [1, 2]
+print(numbers[3])
 
-# age = int(input("Age: "))
-# xfactor = 10 / age
-
+age = int(input("Age: "))
+xfactor = 10 / age
+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
 # 2. Nesprávný typ na vstupu
 # Ošetření pomocí výjimky
 # try:

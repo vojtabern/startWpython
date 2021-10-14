@@ -14,17 +14,17 @@ import sys, re
 count = len(sys.argv)
 print("Number of arguments:", count)
 
-for arg in sys.argv:
-    print(arg)
+#for arg in sys.argv:
+#    print(arg)
 
-# with open(sys.argv[1], encoding='utf-8') as file:
-#     data = file.read()
+with open(sys.argv[1], encoding='utf-8') as file:
+    data = file.read()
 #
-# print(data)
-#
-# data = re.sub(r'[iyíý]','-',data)
-#
-# print(data)
-#
-# with open(sys.argv[2], mode='w', encoding='utf-8') as newfile:
-#     newfile.write(data)
+print(data)
+
+data = re.sub(r'[iyíý]','-',data)
+
+print(data)
+
+with open(sys.argv[2], mode='w', encoding='utf-8') as newfile:
+    newfile.write(data)

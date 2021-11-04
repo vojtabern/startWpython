@@ -23,12 +23,12 @@ class Point:
 
     # Magická metoda pro výpis textové informace o objektu
     def __str__(self):
-        return f'({self.x}, {self.y})'
+        return f'(x:{self.x}, y:{self.y})'
 
     # Magická metoda pro porovnávání objektů
     def __eq__(self, other):
         # Zjistí totožně umístěné objekty
-        return self.x == other.x and self.y == other.y
+        return self.x == other.x or self.y == other.y
 
     # Magická metoda pro zjištění, zda je objekt větší (je dál od středu) než druhý
     def __gt__(self, other):
@@ -142,66 +142,72 @@ class InfoPoint(Point):
 
 
 #? Vytvoř objekt bod1 na pozici x: 8, y: 5
-Point.__MAX_X = 500
-Point.MAX_Y = 500
-bod1 = Point(8, 5)
+# Point.__MAX_X = 500
+# Point.MAX_Y = 500
+bod1 = Point(8, 15)
 print(bod1)
-
-#? Vytvoř objekt bod2 na pozici x: 4, y: 10
-bod2 = InfoPoint(4, 10, 'https://www.sspu-opava.cz')
+bod2 = Point(3, 15)
 print(bod2)
-
-#? Změň výchozí barvu na modrou
-Point.default_color = 'blue'
-
-#? Vytvoř objekt bod3 pomocí metody zero()
-bod3 = Point.zero()
-bod1.draw()
-bod2.color = Point.random_color()
-bod2.draw()
-bod3.draw()
-
-#? Ověř datový typ objektu bod1
-print(type(bod1))
-print(type(bod2))
-
-#? Ověř zda je objekt bod2 instancí třídy Point
-print(isinstance(bod2, Point))
-print(isinstance(bod2, object))
-
-#? Proveď změnu barvy objektu bod2 na náhodnou barvu vygenerovanou statickou metodou random_color()
-bod2.color = Point.random_color()
-bod2.draw()
-
-#? Ověř fungování všech magických metod na příkladech objektů bod1 a bod2
-print(f'{"*".ljust(80,"*")}\nOvěř fungování všech magických metod na příkladech objektů bod1 a bod2')
-print(str(bod1))
-print(str(bod2))
-print(bod1 - bod2)
-print(bod1 + bod2)
+bod2.x = 50
+print(bod2)
 print(bod1 == bod2)
 print(bod1 > bod2)
-
-#? Vytvoř do proměnné body seznam 5 objektů na náhodných pozicích v rozmezí -10 až 10
-print(f'{"*".ljust(80,"*")}\nVytvoř do proměnné body seznam 5 objektů na náhodných pozicích v rozmezí -10 až 10')
-body = [Point.random_pos(-10,10) for i in range(5)]
-
-#? Pro každý objekt seznamu body proveď jeho symbolické vykreslení metodou draw()
-print(f'{"*".ljust(80,"*")}\nPro každý objekt seznamu body proveď jeho symbolické vykreslení metodou draw()')
-for b in body:
-    b.draw()
-
-#? Zjisti, který objekt v seznamu body má největší vzdálenost od počátku
-print(f'{"*".ljust(80,"*")}\nZjisti, který objekt v seznamu body má největší vzdálenost od počátku')
-max = body[0]
-for i in range(1, len(body)):
-    max = body[i] if body[i] > max else max
-max.draw()
-
-#? Zjisti, mezi kterými objekty v seznamu body je nejkratší vzdálenost
-print(f'{"*".ljust(80,"*")}\nZjisti, mezi kterými objekty v seznamu body je nejkratší vzdálenost')
-min = [body[0] - body[1], (body[0], body[1])]
-for x in range(0, len(body) - 1):
-    for y in range(x + 1, len(body)):
-        min = [body[x] - body[y], (body[x], body[y])] if body[x] - body[y] < min[0] else min
-print(min[0], str(min[1][0]), str(min[1][1]))
+#
+# #? Vytvoř objekt bod2 na pozici x: 4, y: 10
+# bod2 = InfoPoint(4, 10, 'https://www.sspu-opava.cz')
+# print(bod2)
+#
+# #? Změň výchozí barvu na modrou
+# Point.default_color = 'blue'
+#
+# #? Vytvoř objekt bod3 pomocí metody zero()
+# bod3 = Point.zero()
+# bod1.draw()
+# bod2.color = Point.random_color()
+# bod2.draw()
+# bod3.draw()
+#
+# #? Ověř datový typ objektu bod1
+# print(type(bod1))
+# print(type(bod2))
+#
+# #? Ověř zda je objekt bod2 instancí třídy Point
+# print(isinstance(bod2, Point))
+# print(isinstance(bod2, object))
+#
+# #? Proveď změnu barvy objektu bod2 na náhodnou barvu vygenerovanou statickou metodou random_color()
+# bod2.color = Point.random_color()
+# bod2.draw()
+#
+# #? Ověř fungování všech magických metod na příkladech objektů bod1 a bod2
+# print(f'{"*".ljust(80,"*")}\nOvěř fungování všech magických metod na příkladech objektů bod1 a bod2')
+# print(str(bod1))
+# print(str(bod2))
+# print(bod1 - bod2)
+# print(bod1 + bod2)
+# print(bod1 == bod2)
+# print(bod1 > bod2)
+#
+# #? Vytvoř do proměnné body seznam 5 objektů na náhodných pozicích v rozmezí -10 až 10
+# print(f'{"*".ljust(80,"*")}\nVytvoř do proměnné body seznam 5 objektů na náhodných pozicích v rozmezí -10 až 10')
+# body = [Point.random_pos(-10,10) for i in range(5)]
+#
+# #? Pro každý objekt seznamu body proveď jeho symbolické vykreslení metodou draw()
+# print(f'{"*".ljust(80,"*")}\nPro každý objekt seznamu body proveď jeho symbolické vykreslení metodou draw()')
+# for b in body:
+#     b.draw()
+#
+# #? Zjisti, který objekt v seznamu body má největší vzdálenost od počátku
+# print(f'{"*".ljust(80,"*")}\nZjisti, který objekt v seznamu body má největší vzdálenost od počátku')
+# max = body[0]
+# for i in range(1, len(body)):
+#     max = body[i] if body[i] > max else max
+# max.draw()
+#
+# #? Zjisti, mezi kterými objekty v seznamu body je nejkratší vzdálenost
+# print(f'{"*".ljust(80,"*")}\nZjisti, mezi kterými objekty v seznamu body je nejkratší vzdálenost')
+# min = [body[0] - body[1], (body[0], body[1])]
+# for x in range(0, len(body) - 1):
+#     for y in range(x + 1, len(body)):
+#         min = [body[x] - body[y], (body[x], body[y])] if body[x] - body[y] < min[0] else min
+# print(min[0], str(min[1][0]), str(min[1][1]))

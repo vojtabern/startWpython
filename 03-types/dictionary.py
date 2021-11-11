@@ -8,9 +8,9 @@ Každému klíči je přiřazena jedna hodnota.
 # Collection which is unordered, changeable and indexed.
 # In Python dictionaries are written with curly brackets, and they have keys and values.
 car = {
-  'brand': 'Ford',
-  'model': 'Mustang',
-  'year': 1964
+    'brand': 'Ford',
+    'model': 'Mustang',
+    'year': 1964
 }
 
 point = {'x': 1, 'y': 10}
@@ -60,18 +60,18 @@ print(f'common: {common}')
 
 # Nested dictionary - vnořené slovníky
 myfamily = {
-  'child1' : {
-    'name' : 'Emil',
-    'year' : 2004
-  },
-  'child2' : {
-    'name' : 'Tobias',
-    'year' : 2007
-  },
-  'child3' : {
-    'name' : 'Linus',
-    'year' : 2011
-  }
+    'child1': {
+        'name': 'Emil',
+        'year': 2004
+    },
+    'child2': {
+        'name': 'Tobias',
+        'year': 2007
+    },
+    'child3': {
+        'name': 'Linus',
+        'year': 2011
+    }
 }
 print(f'Nested dictionary myfamily: {myfamily}')
 
@@ -83,6 +83,60 @@ print(f'Nested dictionary myfamily: {myfamily}')
 # b) Pomocí vhodných metod přidejte do slovníku nový prvek a nějaký starý naopak odstraňte
 # c) Proveďte výpis obsahu slovníku tak, aby i v konzoli vytvořil hezky naformátovanou tabulku i s mezerami
 # viz níže uvedený vzor.
+
+rodiny = {
+    'kokosovi': {
+        'otec': 'Kokosak',
+        'matka': 'Palma',
+        'svobodny': False,
+        'deti': [],
+        'bydliste': {"Karibik"},
+        'auta': ("Hyundai", "Mercedes")
+    },
+    'bramborovi': {
+        'otec': 'Bramborak',
+        'matka': 'Hlína',
+        'svobodny': True,
+        'deti': ["Pepa", "Martin", "Slupka"],
+        'bydliste': {"Zahrada", "Zeme"},
+        'auta': ("Lada",)
+    },
+    'krasavci': {
+        'otec': 'IT3',
+        'matka': 'SSPU',
+        'svobodny': False,
+        'deti': ["IT1", "IT2"],
+        'bydliste': {"Opava", "Bruntal"},
+        'auta': ("Hyundai", "Skoda")
+    }
+}
+
+rodiny["krasavci"]["svobodny"] = True
+del rodiny['kokosovi']["auta"]
+rodiny["mravenci"] = {}
+
+rodiny["mravenci"]["otec"] = "Unknown"
+rodiny["mravenci"]["matka"] = "Kralovna"
+rodiny["mravenci"]["svobodny"] = True
+rodiny["mravenci"]["deti"] = [100000000]
+rodiny["mravenci"]["bydliste"] = {"les"}
+rodiny["mravenci"]["typy_kolonii"] = ("lesni", "panelakova")
+
+print("Slovník rodiny")
+
+pisani = "\nPrijmeni      Otec      Matka      Svobodny      deti      bydliste      auta/typy kolonii"
+for i in range (len(pisani)):
+  print("-", end="")
+print(pisani)
+for i in range (len(pisani)):
+  print("-", end="")
+
+for id, vlastnosti in rodiny.items():
+  print(f"\n{id}     ", end="")
+  for key in vlastnosti:
+      print("{}     ".format(vlastnosti[key]), end="")
+
+
 '''
 Slovník myfamily
 ---------------------------------------------

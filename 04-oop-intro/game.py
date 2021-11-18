@@ -1,6 +1,8 @@
 import datetime
 from random import randrange
 from enum import Enum
+import files
+import jsonfile as jsonfile
 
 
 class Sex(Enum):
@@ -42,6 +44,17 @@ class Player(Person):
 
     def __str__(self):
         return f"Metoda predka: {super().__str__()}, state: {self.state}"
+
+    @property
+    def wins(self):
+        return self.__wins
+
+    @wins.setter
+    def wins(self, value):
+        if value < 0:
+            raise ValueError("Property wins hasn't negative value")
+        else:
+            self.__wins = value
 
     def win_rate(self):
         try:
@@ -100,6 +113,7 @@ class Match:
 
 player1 = Player("Karel", Sex("man"), "CZE")
 player2 = Player("Jana", Sex("woman"), "CZE")
+
 # player.count_of_games = 555
 # player.wins = 308
 input("Pockej chvili a zadej enter")
@@ -109,3 +123,16 @@ input("Pockej chvili a zadej enter")
 match = Match(player1, player2)
 match.play()
 print(str(match), f"\nHistorie: {match.get_history()}")
+
+def load_players(json_file):
+    players = []
+    try:
+        data = jsonfile.read(json_file)
+    except Exception as error:
+        return f"Error: {error}"
+    else:
+        for row in data:
+            players.append(Player(row["nickname"], Sex(row["sex"], state(row["state"]))))
+        return players
+
+print(load_players("./players.json"))
